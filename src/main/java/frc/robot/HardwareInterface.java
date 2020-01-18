@@ -23,17 +23,17 @@ public class HardwareInterface {
    * @param motorName Name of the motor.
    * @param motorValue Value to set the motor to.
    */
-  public void setMotor(String motorName, double motorValue){
+  public void setMotor(String motorName, double motorValue) {
     if (motorName.equals("motor1")) {
       this.motor1.set(motorValue);
     }
-    if (motorName.equals("motor2")){
+    if (motorName.equals("motor2")) {
       this.motor2.set(motorValue);
     }
-    if (motorName.equals("motor3")){
+    if (motorName.equals("motor3")) {
       this.motor3.set(motorValue);
     }
-    if (motorName.equals("motor4))")){
+    if (motorName.equals("motor4")) {
       this.motor4.set(motorValue);
     }
   }
