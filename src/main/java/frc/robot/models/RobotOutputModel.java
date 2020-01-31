@@ -5,19 +5,15 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.subsystem;
+package frc.robot.models;
 
-import frc.robot.models.Model;
-import frc.robot.models.ModelTransform;
-
+import frc.robot.models.devices.DeviceOutputModel;
+import java.util.Set;
 
 /**
- * Add your docs here.
+ * A model to represent the output of a subsystem. 
+ * Should contain 1 or more DeviceOutputModel.
  */
-public abstract class Subsystem<SubsystemInputT extends Model, SubsystemOutputT extends Model> 
-                      implements ModelTransform<SubsystemInputT,SubsystemOutputT>  {
-
-  public SubsystemOutputT run(SubsystemInputT inputModel) {
-    return ;
-  }
+public interface RobotOutputModel extends Model {
+  public Set<DeviceOutputModel> getAllOutputValues();
 }

@@ -51,7 +51,9 @@
             <property name="checkFormat" value="$1"/>
         </module>
 
-        <module name="VisibilityModifier"/>
+        <module name="VisibilityModifier">
+            <property name="allowPublicFinalFields" value="true"/>
+        </module>
 
 
         <module name="OuterTypeFilename"/>
@@ -209,7 +211,7 @@
         </module>
         <module name="AbbreviationAsWordInName">
             <property name="ignoreFinal" value="false"/>
-            <property name="allowedAbbreviationLength" value="1"/>
+            <property name="allowedAbbreviationLength" value="2"/>
         </module>
         <module name="OverloadMethodsDeclarationOrder"/>
         <module name="VariableDeclarationUsageDistance"/>

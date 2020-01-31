@@ -5,19 +5,15 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.subsystem;
-
-import frc.robot.models.Model;
-import frc.robot.models.ModelTransform;
-
+package frc.robot.models;
 
 /**
- * Add your docs here.
+ * Interface to convert one model to another type using a custom defined transformation.
  */
-public abstract class Subsystem<SubsystemInputT extends Model, SubsystemOutputT extends Model> 
-                      implements ModelTransform<SubsystemInputT,SubsystemOutputT>  {
-
-  public SubsystemOutputT run(SubsystemInputT inputModel) {
-    return ;
-  }
+public interface ModelTransform<ModelInT extends Model, ModelOutT extends Model> {
+  /*
+   * Convert from ModelInT to ModelOutT
+   * @return: Default value for model
+   */
+  public ModelOutT transform(ModelInT model);
 }

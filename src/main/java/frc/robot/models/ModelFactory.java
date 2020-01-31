@@ -5,19 +5,10 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.subsystem;
-
-import frc.robot.models.Model;
-import frc.robot.models.ModelTransform;
-
+package frc.robot.models;
 
 /**
  * Add your docs here.
  */
-public abstract class Subsystem<SubsystemInputT extends Model, SubsystemOutputT extends Model> 
-                      implements ModelTransform<SubsystemInputT,SubsystemOutputT>  {
-
-  public SubsystemOutputT run(SubsystemInputT inputModel) {
-    return ;
-  }
+public class ModelFactory<ModelT extends Model> {
 }

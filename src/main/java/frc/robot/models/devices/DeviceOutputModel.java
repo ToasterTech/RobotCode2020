@@ -5,15 +5,18 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.controllers;
+package frc.robot.models.devices;
 
 import frc.robot.models.Model;
 
 /**
- * Controls subsystems by transforming input models to output models.
+ * Model representing the output to a device. 
+ * 
  */
-public abstract class Controller<InputT extends Model,
-                                 OutputT extends Model> {
+public abstract class DeviceOutputModel implements Model {
+  public final DeviceType deviceType;
 
-  public abstract OutputT convertInputToOutput(InputT model);
+  public DeviceOutputModel(DeviceType deviceType) {
+    this.deviceType = deviceType;
+  }
 }

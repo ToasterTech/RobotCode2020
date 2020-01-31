@@ -8,13 +8,21 @@
 package frc.robot.models;
 
 /**
- * Add your docs here.
+ * Interface for defining robot models. Any class that should 
+ * be a model of robot state should implement this method to 
+ * to fit in the type system and provide implementations of 
+ * some key functions.
+ * 
+ * <p>This is suppossed to be more like a trait in scala, but java is very
+ * limited so some workarounds have to be done. <\p>
+ * TODO: Serialization method interface for logging models, probably to json.
  */
-public abstract class Model {
+public interface Model {
   /*
    * Create a default value for this model. It has to be an instance 
-   * method because you can't extend static methods. 
+   * method because you can't extend static methods. This has to be 
+   * an instance method because of how java handles generics (disgusting).
    * @return: Default value for model
    */
-  public abstract Model defaultModel();
+  public Model defaultModel();
 }
