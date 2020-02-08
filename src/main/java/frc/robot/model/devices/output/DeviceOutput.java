@@ -7,16 +7,16 @@
 
 package frc.robot.model.devices.output;
 
-import java.util.Objects;
-
 import frc.robot.model.Model;
+
+import java.util.Objects;
 
 /**
  * Model for outputting to a device to pass to the hardware abstraction
  * interface. Contains name of device, and a deviceCommand to send to that
  * deviceName.
  */
-public class DeviceOutput<DeviceCommandT extends DeviceOutputCommand> extends Model{
+public class DeviceOutput<DeviceCommandT extends DeviceOutputCommand> extends Model {
   public final String deviceName;
   public final DeviceCommandT deviceCommand;
 

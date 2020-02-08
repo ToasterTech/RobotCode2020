@@ -7,7 +7,6 @@
 
 package frc.robot.model.subsystems.drive;
 
-import frc.robot.model.Model;
 import frc.robot.model.devices.output.DeviceOutput;
 import frc.robot.model.devices.output.DeviceOutputCommand;
 import frc.robot.model.devices.output.GenericMotorPWM;

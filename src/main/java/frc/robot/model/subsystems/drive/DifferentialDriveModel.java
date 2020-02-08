@@ -7,9 +7,10 @@
 
 package frc.robot.model.subsystems.drive;
 
+import frc.robot.model.Model;
+
 import java.util.Objects;
 
-import frc.robot.model.Model;
 
 /**
  * A model to control a differential drive train.

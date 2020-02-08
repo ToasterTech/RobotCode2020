@@ -7,10 +7,10 @@
 
 package frc.robot.model.devices.output;
 
+import frc.robot.model.devices.DeviceType;
+
 import java.util.Objects;
 
-import frc.robot.model.Model;
-import frc.robot.model.devices.DeviceType;
 
 /**
  * Model to control PWM Motors.
