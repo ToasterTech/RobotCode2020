@@ -25,14 +25,15 @@ public class DriveSubsystem extends RobotSubsystem<DriveModel> {
   public List<DeviceOutputCommand> run(DriveModel input) {
     if (input instanceof DifferentialDriveModel) {
       DifferentialDriveModel differentialDriveModel = (DifferentialDriveModel) input;
+      // This should be more configurable about the names of the motors but I am in a rush
+      // It should change anyway because we are probably using 4 motors.
       return Arrays.asList(
         new GenericMotorPWM("leftMotor", differentialDriveModel.left),
-        new GenericMotorPWM("rightMotor", differentialDriveModel.left)
+        new GenericMotorPWM("rightMotor", differentialDriveModel.right)
       );
     }
     throw new IllegalArgumentException(
       String.format("%s is not a supported model for DriveSubsystem", input.getClass())
     );
   }
-
 }
