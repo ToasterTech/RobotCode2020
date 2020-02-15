@@ -7,13 +7,13 @@
 
 package frc.robot;
 
-import java.util.HashMap;
-import java.util.List;
-
 import edu.wpi.first.wpilibj.PWMTalonSRX;
 import frc.robot.devices.commands.DeviceOutputCommand;
 import frc.robot.devices.output.DeviceOutput;
 import frc.robot.devices.output.DevicePWMTalonSRX;
+import java.util.HashMap;
+import java.util.List;
+
 
 /**
  * Add your docs here.
@@ -26,7 +26,7 @@ public class HardwareInterface {
   private PWMTalonSRX motor3 = new PWMTalonSRX(3);
   private PWMTalonSRX motor4 = new PWMTalonSRX(4);
 
-  public HardwareInterface(){
+  public HardwareInterface() {
     this.deviceMap = new HashMap<String, DeviceOutput>();
     this.deviceMap.put("leftMotor", new DevicePWMTalonSRX(1));
     this.deviceMap.put("rightMotor", new DevicePWMTalonSRX(2));
@@ -61,8 +61,7 @@ public class HardwareInterface {
       DeviceOutput output = this.deviceMap.get(command.getDeviceId());
       if (output.isValidCommand(command)) {
         output.run(command);
-      }
-      else {
+      } else {
         throw new IllegalArgumentException(
           String.format("%s is not a valid DeviceOutputCommand for %s", command.getClass(), output.getClass())
         );
