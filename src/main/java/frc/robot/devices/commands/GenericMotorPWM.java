@@ -13,7 +13,7 @@ import java.util.Objects;
 /**
  * Represents a command to.
  */
-public class GenericMotorPWM extends BaseOutputCommand {
+public class GenericMotorPWM extends DeviceOutputCommand {
 
   public final String deviceId;
   public final double setpoint;

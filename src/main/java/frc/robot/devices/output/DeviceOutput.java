@@ -5,15 +5,23 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.subsystem;
+package frc.robot.devices.output;
 
 import frc.robot.devices.commands.DeviceOutputCommand;
-import frc.robot.models.Model;
-import java.util.List;
 
 /**
- * A robot subystem to generate device output commands.
+ * Code to actually output commands to hardware devices.
  */
-public abstract class RobotSubsystem<InputModelT extends Model> {
-  public abstract List<DeviceOutputCommand> run(InputModelT input);
+public abstract class DeviceOutput {
+  /**
+   * Checks if the given command is valid for this device output.
+   * @param command input command
+   */
+  public abstract boolean isValidCommand(DeviceOutputCommand command);
+
+  /**
+   * Sets the device to the value specified by command.
+   * @param command input command
+   */
+  public abstract void run(DeviceOutputCommand command);
 }

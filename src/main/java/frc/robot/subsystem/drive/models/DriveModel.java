@@ -1,4 +1,4 @@
-package frc.robot.subsystem.drive;
+package frc.robot.subsystem.drive.models;
 
 import frc.robot.models.Model;
 

@@ -5,17 +5,33 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.subsystem.drive;
+package frc.robot.subsystem.drive.models;
+
+import java.util.Objects;
 
 /**
- * Build a .
+ * A simple model for Differential Drivetrains. 
  */
-public class DifferentialDriveModel {
+public class DifferentialDriveModel extends DriveModel {
   public final double left;
   public final double right;
 
   public DifferentialDriveModel(double left, double right) {
     this.left = left;
     this.right = right;
+  }
+
+  @Override
+  public boolean equals(Object other) {
+    if (!(other instanceof DifferentialDriveModel)) {
+      return false;
+    }
+    DifferentialDriveModel otherVal = (DifferentialDriveModel)other;
+    return this.left == otherVal.left & this.right == otherVal.right;
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(this.left, this.right);
   }
 }

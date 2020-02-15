@@ -5,13 +5,13 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.devices.commands;
+package frc.robot.devices.output;
 
-import frc.robot.models.Model;
+import frc.robot.devices.commands.DeviceOutputCommand;
 
 /**
- * Add your docs here.
+ * Code to actually output commands to hardware devices.
  */
-public abstract class BaseOutputCommand extends Model {  
-  public abstract String getDeviceId();
+public abstract class MotorPWM extends DeviceOutput {
+  
 }

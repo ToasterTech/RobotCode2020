@@ -5,15 +5,13 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.subsystem;
+package frc.robot.devices.commands;
 
-import frc.robot.devices.commands.DeviceOutputCommand;
 import frc.robot.models.Model;
-import java.util.List;
 
 /**
- * A robot subystem to generate device output commands.
+ * Add your docs here.
  */
-public abstract class RobotSubsystem<InputModelT extends Model> {
-  public abstract List<DeviceOutputCommand> run(InputModelT input);
+public abstract class DeviceOutputCommand extends Model {  
+  public abstract String getDeviceId();
 }

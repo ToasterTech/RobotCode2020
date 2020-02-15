@@ -7,23 +7,32 @@
 
 package frc.robot.subsystem.drive;
 
+import frc.robot.devices.commands.DeviceOutputCommand;
+import frc.robot.devices.commands.GenericMotorPWM;
+import frc.robot.subsystem.RobotSubsystem;
+import frc.robot.subsystem.drive.models.DifferentialDriveModel;
+import frc.robot.subsystem.drive.models.DriveModel;
+
+import java.util.Arrays;
 import java.util.List;
 
-import frc.robot.devices.commands.BaseOutputCommand;
-import frc.robot.subsystem.RobotSubsystem;
 
 /**
- * Add your docs here.
+ * Subsystem for transforming drive models to motor commands.
  */
 public class DriveSubsystem extends RobotSubsystem<DriveModel> {
-
-
   @Override
-  public List<BaseOutputCommand> run(DriveModel input) {
-    if(input instanceof DifferentialDriveModel) {
-      return 
+  public List<DeviceOutputCommand> run(DriveModel input) {
+    if (input instanceof DifferentialDriveModel) {
+      DifferentialDriveModel differentialDriveModel = (DifferentialDriveModel) input;
+      return Arrays.asList(
+        new GenericMotorPWM("leftMotor", differentialDriveModel.left),
+        new GenericMotorPWM("rightMotor", differentialDriveModel.left)
+      );
     }
-    return null;
+    throw new IllegalArgumentException(
+      String.format("%s is not a supported model for DriveSubsystem", input.getClass())
+    );
   }
 
 }
