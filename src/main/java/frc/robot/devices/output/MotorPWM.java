@@ -11,5 +11,4 @@ package frc.robot.devices.output;
  * Code to actually output commands to hardware devices.
  */
 public abstract class MotorPWM extends DeviceOutput {
-
 }
