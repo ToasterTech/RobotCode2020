@@ -13,22 +13,26 @@ import java.util.Objects;
  * A simple model for the conveyor system on the 2020 robot. 
  */
 public class ConveyorSystemModel extends ConveyorModel {
-  // Put some variables here that indicate the behavior of the conveyor belt.
-  // For now I see it going up, down and stopped, but there could do more. 
-  // This is pretty simple so I will let you think through and figure it out.
-  // Commit the changes once you make progress
-  public final String yourVariableHere; 
+  public enum IntakeState {
+    INTAKE, OUTTAKE, STOPPED
+  }
+
+  public final IntakeState intakeState; 
 
 
-  public ConveyorSystemModel() {
+  public ConveyorSystemModel(IntakeState intakeState) {
     //Initalize the variables here
-    this.yourVariableHere = "yourVariableValue";
+    this.intakeState = intakeState;
   }
 
   @Override
   public boolean equals(Object other) {
     // Implement this, should check if both of these objects are equal
-    return false;
+    if (!(other instanceof ConveyorSystemModel)) {
+      return false;
+    }
+    ConveyorSystemModel otherVal = (ConveyorSystemModel)other;
+    return this.intakeState == otherVal.intakeState;
   }
 
   @Override
