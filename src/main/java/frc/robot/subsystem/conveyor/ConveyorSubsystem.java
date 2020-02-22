@@ -12,10 +12,6 @@ import frc.robot.devices.commands.GenericMotorPWM;
 import frc.robot.subsystem.RobotSubsystem;
 import frc.robot.subsystem.conveyor.models.ConveyorModel;
 import frc.robot.subsystem.conveyor.models.ConveyorSystemModel;
-import frc.robot.subsystem.conveyor.models.ConveyorSystemModel.IntakeState;
-import frc.robot.subsystem.drive.models.DifferentialDriveModel;
-import frc.robot.subsystem.drive.models.DriveModel;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -29,17 +25,17 @@ public class ConveyorSubsystem extends RobotSubsystem<ConveyorModel> {
     if (input instanceof ConveyorSystemModel) {
       ConveyorSystemModel conveyorSystemModel = (ConveyorSystemModel) input;
       //set the motor to the right value for whatever the conveyorSystemModel indicates.
-      if (conveyorSystemModel.intakeState == ConveyorSystemModel.IntakeState.STOPPED){
+      if (conveyorSystemModel.intakeState == ConveyorSystemModel.IntakeState.STOPPED) {
         return Arrays.asList(
           new GenericMotorPWM("conveyorMotor", 0.0)
         );
       }
-      if (conveyorSystemModel.intakeState == ConveyorSystemModel.IntakeState.INTAKE){
+      if (conveyorSystemModel.intakeState == ConveyorSystemModel.IntakeState.INTAKE) {
         return Arrays.asList(
           new GenericMotorPWM("conveyorMotor", 1)
         );
       }
-      if (conveyorSystemModel.intakeState == ConveyorSystemModel.IntakeState.OUTTAKE){
+      if (conveyorSystemModel.intakeState == ConveyorSystemModel.IntakeState.OUTTAKE) {
         return Arrays.asList(
           new GenericMotorPWM("conveyorMotor", -1)
         );
