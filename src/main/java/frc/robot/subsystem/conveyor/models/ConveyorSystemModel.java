@@ -21,13 +21,11 @@ public class ConveyorSystemModel extends ConveyorModel {
 
 
   public ConveyorSystemModel(IntakeState intakeState) {
-    //Initalize the variables here
     this.intakeState = intakeState;
   }
 
   @Override
   public boolean equals(Object other) {
-    // Implement this, should check if both of these objects are equal
     if (!(other instanceof ConveyorSystemModel)) {
       return false;
     }
@@ -37,7 +35,6 @@ public class ConveyorSystemModel extends ConveyorModel {
 
   @Override
   public int hashCode() {
-    // For the sake this just pass whatever variables into this method
-    return Objects.hash();
+    return Objects.hash(this.intakeState);
   }
 }
