@@ -19,7 +19,7 @@ import java.util.List;
 
 
 /**
- * Subsystem for transforming drive models to motor commands.
+ * Subsystem for transforming shooter models to motor commands.
  */
 public class ShooterSubsystem extends RobotSubsystem<ShooterModel> {
 
@@ -27,8 +27,6 @@ public class ShooterSubsystem extends RobotSubsystem<ShooterModel> {
   public List<DeviceOutputCommand> run(ShooterModel input) {
     if (input instanceof ShooterSubsystemModel) {
       ShooterSubsystemModel shooterSubsystemModel = (ShooterSubsystemModel) input;
-      // This should be more configurable about the names of the motors but I am in a rush
-      // It should change anyway because we are probably using 4 motors.
       switch (shooterSubsystemModel.shooterState) {
         case STOPPED:
           return Arrays.asList(
