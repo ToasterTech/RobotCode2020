@@ -10,7 +10,7 @@ package frc.robot.subsystem.shooter.models;
 import java.util.Objects;
 
 /**
- * A simple model for Differential Drivetrains. 
+ * A simple model for Shooter Commands. 
  */
 public class ShooterSubsystemModel extends ShooterModel {
   public enum ShooterState {
@@ -30,7 +30,7 @@ public class ShooterSubsystemModel extends ShooterModel {
       return false;
     }
     ShooterSubsystemModel otherVal = (ShooterSubsystemModel) other;
-    return this.shooterState == otherVal.shooterState && this.shooterState == otherVal.shooterState;
+    return this.shooterState == otherVal.shooterState;
   }
 
   @Override
