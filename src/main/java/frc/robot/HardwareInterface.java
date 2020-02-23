@@ -40,8 +40,11 @@ public class HardwareInterface extends BaseHardwareInterface {
     this.outputMap.put("rightMotor2", new DevicePWMTalonSRX(4));
 
     DeviceCANSparkMax shooterMotor = new DeviceCANSparkMax(1, MotorType.kBrushless, true);
+
     this.outputMap.put("shooterMotor", shooterMotor);
     this.inputMap.put("shooterEncoderVelocity", shooterMotor.getEncoderVelocityInput());
+
+    this.outputMap.put("conveyorMotor", new DeviceCANSparkMax(3, MotorType.kBrushless, false));
 
     GamepadInput gamepad = new GamepadInput("driverJoystick", new Joystick(1));
     this.inputMap.put("driverGamepad", gamepad);

@@ -10,7 +10,6 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.TimedRobot;
 import frc.robot.devices.commands.DeviceOutputCommand;
-import frc.robot.devices.commands.VelocityControlMotorCAN;
 import frc.robot.subsystem.conveyor.ConveyorSubsystem;
 import frc.robot.subsystem.conveyor.models.ConveyorSystemModel;
 import frc.robot.subsystem.drive.DriveSubsystem;
@@ -18,7 +17,6 @@ import frc.robot.subsystem.drive.models.DifferentialDriveModel;
 import frc.robot.subsystem.shooter.ShooterSubsystem;
 import frc.robot.subsystem.shooter.models.ShooterSubsystemModel;
 
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
