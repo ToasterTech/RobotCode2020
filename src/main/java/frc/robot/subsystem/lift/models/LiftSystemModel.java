@@ -5,31 +5,30 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.subsystem.conveyor.models;
+package frc.robot.subsystem.lift.models;
 
 import java.util.Objects;
 
 /**
  * A simple model for the conveyor system on the 2020 robot. 
  */
-public class ConveyorSystemModel extends ConveyorModel {
+public class LiftSystemModel extends LiftModel {
   public enum IntakeState {
     INTAKE, OUTTAKE, STOPPED
   }
 
-  public final IntakeState intakeState; 
+  public final IntakeState intakeState;
 
-
-  public ConveyorSystemModel(IntakeState intakeState) {
+  public LiftSystemModel(IntakeState intakeState) {
     this.intakeState = intakeState;
   }
 
   @Override
   public boolean equals(Object other) {
-    if (!(other instanceof ConveyorSystemModel)) {
+    if (!(other instanceof LiftSystemModel)) {
       return false;
     }
-    ConveyorSystemModel otherVal = (ConveyorSystemModel)other;
+    LiftSystemModel otherVal = (LiftSystemModel) other;
     return this.intakeState == otherVal.intakeState;
   }
 

@@ -5,37 +5,38 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.subsystem.conveyor;
+package frc.robot.subsystem.lift;
 
 import frc.robot.devices.commands.DeviceOutputCommand;
-import frc.robot.devices.commands.GenericMotorCAN;
+import frc.robot.devices.commands.GenericMotorPWM;
 import frc.robot.subsystem.RobotSubsystem;
-import frc.robot.subsystem.conveyor.models.ConveyorModel;
-import frc.robot.subsystem.conveyor.models.ConveyorSystemModel;
+import frc.robot.subsystem.lift.models.LiftModel;
+import frc.robot.subsystem.lift.models.LiftSystemModel;
+
 import java.util.Arrays;
 import java.util.List;
 
 /**
  * Subsystem for transforming intake models to motor commands.
  */
-public class ConveyorSubsystem extends RobotSubsystem<ConveyorModel> {
+public class LiftSubsystem extends RobotSubsystem<LiftModel> {
   @Override
-  public List<DeviceOutputCommand> run(ConveyorModel input) {
-    if (input instanceof ConveyorSystemModel) {
-      ConveyorSystemModel conveyorSystemModel = (ConveyorSystemModel) input;
-      if (conveyorSystemModel.intakeState == ConveyorSystemModel.IntakeState.STOPPED) {
+  public List<DeviceOutputCommand> run(LiftModel input) {
+    if (input instanceof LiftSystemModel) {
+      LiftSystemModel liftSystemModel = (LiftSystemModel) input;
+      if (liftSystemModel.intakeState == LiftSystemModel.IntakeState.STOPPED) {
         return Arrays.asList(
-          new GenericMotorCAN("conveyorMotor", 0.0)
+          new GenericMotorPWM("liftMotor", 0.0)
         );
       }
-      if (conveyorSystemModel.intakeState == ConveyorSystemModel.IntakeState.INTAKE) {
+      if (liftSystemModel.intakeState == LiftSystemModel.IntakeState.INTAKE) {
         return Arrays.asList(
-          new GenericMotorCAN("conveyorMotor", 1)
+          new GenericMotorPWM("liftMotor", 1)
         );
       }
-      if (conveyorSystemModel.intakeState == ConveyorSystemModel.IntakeState.OUTTAKE) {
+      if (liftSystemModel.intakeState == LiftSystemModel.IntakeState.OUTTAKE) {
         return Arrays.asList(
-          new GenericMotorCAN("conveyorMotor", -1)
+          new GenericMotorPWM("liftMotor", -1)
         );
       }
     }
